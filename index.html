@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7f0"><meta name="description" content="سمورة، مساحة صغيرة للكلمات اللطيفة والتحفيز والمحادثة.">
+  <title>سمورة | مساحة من اللطف</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top" aria-label="سمورة الصفحة الرئيسية"><span class="brand-mark">♡</span><span>سمورة<small>مساحة من اللطف</small></span></a>
+      <div class="side-label" data-i18n="yourSpace">مساحتك</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-scroll="chatPanel"><span>✧</span><b data-i18n="chat">الدردشة</b></button>
+        <button class="nav-item" data-action="compliment"><span>♡</span><b data-i18n="needCompliment">أحتاج مجاملة</b></button>
+        <button class="nav-item" data-action="boost"><span>☀</span><b data-i18n="liftMood">ارفع معنوياتي</b></button>
+        <button class="nav-item" data-action="selfnote"><span>✎</span><b data-i18n="noteToSelf">رسالة لنفسي</b></button>
+      </nav>
+      <div class="sidebar-note"><span class="tiny-spark">✦</span><p data-i18n="sideQuote">لا بأس أن تتقدم ببطء، المهم ألّا تتوقف عن الإيمان بنفسك.</p><small data-i18n="dailyNote">تذكير لطيف لك</small></div>
+      <div class="sidebar-bottom"><span class="online-dot"></span><span data-i18n="hereForYou">سمورة هنا من أجلك</span></div>
+    </aside>
+
+    <main class="main-content" id="top">
+      <header class="topbar"><div class="mobile-brand">♡ <strong>سمورة</strong></div><div class="topbar-actions">
+        <button class="soft-icon" id="languageBtn" aria-label="Change language">EN</button>
+        <button class="soft-icon" id="themeBtn" aria-label="Toggle theme">☾</button>
+      </div></header>
+      <section class="welcome-section">
+        <div class="welcome-copy"><span class="eyebrow" data-i18n="welcomeEyebrow">ركن صغير لك وحدك</span><h1 data-i18n="welcomeTitle">أهلًا بك، يا جميل الروح <span>♡</span></h1><p data-i18n="welcomeText">خذ نفسًا عميقًا... أنت تستحق لحظة هادئة وكلمة طيبة.</p></div>
+        <div class="mascot-wrap" id="mascotWrap" aria-label="سمورة الشخصية اللطيفة"><div class="heart-float heart-a">♥</div><div class="heart-float heart-b">♡</div>
+          <div class="mascot"><div class="mascot-ear left"></div><div class="mascot-ear right"></div><div class="mascot-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="cheek cheek-left"></i><i class="cheek cheek-right"></i><i class="smile"></i></div><div class="mascot-body"></div></div>
+          <span class="mascot-caption" data-i18n="mascotCaption">أنا سمورة، صديقتك اللطيفة</span>
+        </div>
+      </section>
+
+      <section class="daily-card"><div class="daily-icon">☀</div><div class="daily-content"><div class="card-kicker" data-i18n="dailyDose">جرعة التحفيز اليومية</div><p id="dailyMessage">كل خطوة صغيرة تخطوها اليوم تقرّبك من الشخص الذي تحلم أن تكونه.</p><span class="daily-date" id="dailyDate"></span></div><div class="daily-sparkle">✧</div></section>
+
+      <section class="quick-section"><div class="section-heading"><div><span class="eyebrow" data-i18n="littleBoost">دفعة لطيفة</span><h2 data-i18n="quickTitle">ماذا تحتاج الآن؟</h2></div><span class="heading-flower">✿</span></div>
+        <div class="quick-grid">
+          <button class="quick-card" data-action="compliment"><span class="quick-icon pink">♡</span><strong data-i18n="needCompliment">أحتاج مجاملة</strong><small data-i18n="complimentSub">كلمات لطيفة لقلبك</small></button>
+          <button class="quick-card" data-action="boost"><span class="quick-icon peach">✧</span><strong data-i18n="liftMood">ارفع معنوياتي</strong><small data-i18n="boostSub">لنستعد طاقتك الجميلة</small></button>
+          <button class="quick-card" data-action="selfnote"><span class="quick-icon lilac">✎</span><strong data-i18n="noteToSelf">رسالة لنفسي</strong><small data-i18n="noteSub">اكتب لنفسك بحب</small></button>
+        </div>
+      </section>
+
+      <section class="chat-panel" id="chatPanel"><div class="chat-heading"><div class="chat-avatar">♡</div><div><h2 data-i18n="talkToSamoura">تحدث مع سمورة</h2><p><span class="online-dot"></span><span data-i18n="alwaysHere">موجودة هنا لتسمعك</span></p></div><span class="chat-decoration">✦</span></div>
+        <div class="chat-messages" id="chatMessages"><div class="message-row bot-row"><div class="mini-avatar">♡</div><div class="message bot-message" data-i18n="helloMessage">مرحبًا بك! 💗 أنا سمورة. أخبرني كيف كان يومك، أو أخبرني بما تحتاجه الآن. أنا أستمع إليك.</div></div></div>
+        <div class="chat-suggestions"><button data-prompt="أريد مجاملة صادقة ولطيفة." data-i18n="suggest1">قولي لي شيئًا جميلًا ♡</button><button data-prompt="أشعر ببعض الإحباط، ساعديني على استعادة حماسي." data-i18n="suggest2">أحتاج دفعة معنوية ✧</button></div>
+        <form class="chat-form" id="chatForm"><input id="messageInput" autocomplete="off" maxlength="2000" placeholder="اكتب ما في قلبك..." data-i18n-placeholder="inputPlaceholder"><button type="submit" id="sendBtn" aria-label="Send message">➤</button></form>
+        <div class="chat-footnote" data-i18n="privacyNote">مساحتك هنا هادئة؛ لا تُحفظ المحادثة بعد إغلاق الصفحة.</div>
+      </section>
+      <footer><span data-i18n="footerLine">صُنعت بحب، لتذكّرك بأنك تستحق اللطف دائمًا.</span> <b>♡</b></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body></html>
